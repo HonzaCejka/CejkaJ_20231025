@@ -5,8 +5,96 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CejkaJ_20231025"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Background="#333333" Foreground="#fff">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="25*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="91*"/>
+                    <ColumnDefinition Width="87*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="33*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="33*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="33*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="33*"/>
+                    <RowDefinition Height="11*"/>
+                    <RowDefinition Height="250*"/>
+                </Grid.RowDefinitions>
+                <TextBlock  HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="182" Height="19" TextAlignment="Center"><Run Language="cs-cz" Text="Objekt:"/></TextBlock>
+                <TextBlock Grid.Row="2"  HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="182" Height="19" TextAlignment="Center"><Run Language="cs-cz" Text="A:"/></TextBlock>
+                <TextBlock Grid.Row="4"  HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="182" Height="19" TextAlignment="Center"><Run Language="cs-cz" Text="B:"/></TextBlock>
+                <TextBlock Grid.Row="6" x:Name="thirdSiteName"  HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="182" Height="19" TextAlignment="Center">C:</TextBlock>
+                <TextBlock Grid.Column="1" Grid.Row="8" x:Name="result"  HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Height="83" TextAlignment="Center"/>
+                <ComboBox Name="cb" Grid.Row="0" SelectionChanged="cb_SelectionChanged" Margin="167,0,37,3" Grid.ColumnSpan="3" >
+                    <ComboBoxItem Content="Trojuhelnik"/>
+                    <ComboBoxItem Content="Obdelnik"/>
+                </ComboBox>
+                <TextBox x:Name="thirdSite" VerticalContentAlignment="Center" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="6" TextWrapping="Wrap"  VerticalAlignment="Center" Width="160" Height="33" />
+                <TextBox x:Name="firstSite" VerticalContentAlignment="Center" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap"  VerticalAlignment="Center" Width="161" Height="33" />
+                <TextBox x:Name="secondSite" VerticalContentAlignment="Center" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap"  VerticalAlignment="Center" Width="160" Height="33"/>
+                <Button Content="Vypocitej" Name="CalcBtn" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Top" Height="213" Width="166" Click="CalcBtn_Click"/>
+                <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="CM" VerticalAlignment="Center" Height="19" Width="35"/>
+                <TextBlock Grid.Column="2" HorizontalAlignment="Center" Grid.Row="4" TextWrapping="Wrap" Text="CM" VerticalAlignment="Center" Height="19" Width="35"/>
+                <TextBlock x:Name="digit" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="6" TextWrapping="Wrap" Text="CM" VerticalAlignment="Center" Height="19" Width="35"/>
+            </Grid>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="x:" VerticalAlignment="Center" Height="22" Width="182" TextAlignment="Center"/>
+                    <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="y:" VerticalAlignment="Center" Height="22" Width="182" TextAlignment="Center" Grid.Row="1"/>
+                    <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="n:" VerticalAlignment="Top" Height="22" Width="182" TextAlignment="Center" Grid.Row="2" Margin="0,19,0,0"/>
+                    <TextBox x:Name="X" Grid.Column="1" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="182" Height="50"/>
+                    <TextBox x:Name="Y" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="182" Height="50" Grid.Column="1" Grid.Row="1"/>
+                    <TextBox x:Name="N" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="182" Height="50" Grid.Column="1" Grid.Row="2"/>
+                    <Button Content="generate" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Height="49" Width="364" Grid.ColumnSpan="2" Click="Button_Click"/>
+                </Grid>
+                <Grid x:Name="VysledekGrid" Grid.Row="1"/>
+            </Grid>
+        </Grid>
 
     </Grid>
 </Window>
